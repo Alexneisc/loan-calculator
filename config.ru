@@ -1,4 +1,4 @@
 require 'sinatra'
-require './loancalc'
+require './loan-calculator'
 
 run Sinatra::Application

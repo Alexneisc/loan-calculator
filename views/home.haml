@@ -1,28 +1,28 @@
-- if !@errors[:msg].nil?
+- if @errors[:msg]
   .col-sm-offset-4.col-sm-8
     .alert.alert-danger=@errors[:msg]
 
-%form{:method => "post", :class => "form-horizontal form-calculator", :role => "form"}
-  .form-group{:class => ("has-error" if !@errors[:rate].nil?)}
-    %label{:for => "rate", :class => "col-sm-4 control-label"} Процентная ставка (%):
+%form{method: "post", class: "form-horizontal form-calculator", role: "form"}
+  .form-group{class: ("has-error" if @errors[:rate])}
+    %label{for: "rate", class: "col-sm-4 control-label"} Процентная ставка (%):
     .col-sm-8
-      %input{:name => "rate", :type => "text", :id => "rate", :class => "form-control", :required=>{}}
+      %input{name: "rate", type: "text", id: "rate", class: "form-control"}
 
-  .form-group{:class => ("has-error" if !@errors[:sum].nil?)}
-    %label{:for => "sum", :class => "col-sm-4 control-label"} Сумма кредита:
+  .form-group{class: ("has-error" if @errors[:sum])}
+    %label{for: "sum", class: "col-sm-4 control-label"} Сумма кредита:
     .col-sm-8
-      %input{:name => "sum", :type => "text", :id => "sum", :class => "form-control", :required=>{}}
+      %input{name: "sum", type: "text", id: "sum", class: "form-control"}
 
-  .form-group{:class => ("has-error" if !@errors[:period].nil?)}
-    %label{:for => "period", :class => "col-sm-4 control-label"} Термин кредита:
+  .form-group{class: ("has-error" if @errors[:period])}
+    %label{for: "period", class: "col-sm-4 control-label"} Термин кредита:
     .col-sm-8
-      %input{:name => "period", :type => "text", :id => "period", :class => "form-control", :required=>{}}
+      %input{name: "period", type: "text", id: "period", class: "form-control"}
 
   .form-group
     .col-sm-offset-4.col-sm-8
-      %input{:type => "submit", :value => "Send", :class => "btn btn-primary"}
+      %input{type: "submit", value: "Send", class: "btn btn-primary"}
 
-- if !@amount.nil?
+- if @amount
   .col-sm-offset-4.col-sm-8
     .well
       Месячный платёж составляет 
