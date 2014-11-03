@@ -35,10 +35,6 @@ class Calculator
 	attr_accessor :rate, :sum, :period
 
 	def calculate
-		r = rate
-		s = sum / 12
-		p = period
-
-		r + (r * s / (1 - (1 + s) * (1 - p)))
+		sum * ( rate / 100 / ( 1 - ( 1 + rate / 100 ) ** -period ) )
 	end
 end
